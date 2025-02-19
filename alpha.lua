@@ -70,15 +70,30 @@ return {
       button.opts.hl_shortcut = "AlphaShortcut"
     end
 
+    -- Fifteen word wrap
     local quotes = {
       {
-        "We should save the old growth forest as a matter of national defense",
+        "Whether you're cured by a fungus, or watch it cure someone else; whether you",
+        "build your home from fungi, or start growing mushrooms in your home, fungi",
+        "will catch you in the act. If you're alive, they already have.",
+        "[Merlin Sheldrake]",
       },
       {
-        "Fungi are the interface organisms between life and death",
+        "I see the mycelium as the Earth's natural Internet, a consciousness with",
+        "which we might be able to communicate. Through cross-species interfacing,",
+        "we may one day exchange information with these sentient cellular networks.",
+        "Because these externalised neurological nets sense any impression upon",
+        "them, from footsteps to falling tree branches, they could relay enormous",
+        "amounts of data regarding the movements of all organisms through the",
+        "landscape.",
+        "[Paul Stamet]",
       },
       {
-        "True wealth is not measured in material possessions but by the abundance of options and choices",
+        "Science isn’t an exercise in cold-blooded rationality. Scientists are—and",
+        "have always been—emotional, creative, intuitive, whole human beings,",
+        "asking questions about a world that was never made to be catalogued and",
+        "systematised",
+        "[Merlin Sheldrake]",
       },
     }
 
