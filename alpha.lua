@@ -6,27 +6,6 @@ return {
   opts = function()
     math.randomseed(os.time())
     local dashboard = require("alpha.themes.dashboard")
-    -- Function to center quotes
-    local function center_quote(quote)
-      local max_width = 0
-      for _, str in ipairs(quote) do
-        max_width = math.max(max_width, #str)
-      end
-
-      local centered_strings = {}
-      for _, str in ipairs(quote) do
-        local leading_spaces = math.floor((max_width - #str) / 2)
-        local trailing_spaces = max_width - leading_spaces - #str
-        local centered_str = string.rep(" ", leading_spaces) .. str .. string.rep(" ", trailing_spaces)
-        table.insert(centered_strings, centered_str)
-      end
-
-      -- Insert blank strings at start of table yea ik its scuffed
-      table.insert(centered_strings, 1, "")
-      table.insert(centered_strings, 1, "")
-      return centered_strings
-    end
-
     local logo = [[
 ⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣤⡶⢶⣶⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⣀⠴⠛⠛⠉⠄⠀⠀⠀⠀⠀⠀⠀⠈⠑⠒⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -71,39 +50,21 @@ return {
     end
 
     -- Fifteen word wrap
-    local quotes = {
-      {
-        "Whether you're cured by a fungus, or watch it cure someone else; whether you",
-        "build your home from fungi, or start growing mushrooms in your home, fungi",
-        "will catch you in the act. If you're alive, they already have.",
-        "[Merlin Sheldrake]",
-      },
-      {
-        "I see the mycelium as the Earth's natural Internet, a consciousness with",
-        "which we might be able to communicate. Through cross-species interfacing,",
-        "we may one day exchange information with these sentient cellular networks.",
-        "Because these externalised neurological nets sense any impression upon",
-        "them, from footsteps to falling tree branches, they could relay enormous",
-        "amounts of data regarding the movements of all organisms through the",
-        "landscape.",
-        "[Paul Stamet]",
-      },
-      {
-        "Science isn’t an exercise in cold-blooded rationality. Scientists are—and",
-        "have always been—emotional, creative, intuitive, whole human beings,",
-        "asking questions about a world that was never made to be catalogued and",
-        "systematised",
-        "[Merlin Sheldrake]",
-      },
+    local quote = {
+      "Whether you're cured by a fungus, or watch it cure someone else; whether you",
+      "build your home from fungi, or start growing mushrooms in your home, fungi",
+      "will catch you in the act. If you're alive, they already have.",
+      "",
+      "[Merlin Sheldrake]",
     }
 
     -- Set random quote
-    dashboard.section.footer.val = center_quote(quotes[math.random(#quotes)])
+    dashboard.section.footer.val = quote
 
     dashboard.section.header.opts.hl = "AlphaHeader"
     dashboard.section.buttons.opts.hl = "AlphaButtons"
     dashboard.section.footer.opts.hl = "AlphaFooter"
-    dashboard.opts.layout[1].val = 1
+    dashboard.opts.layout[1].val = 3
 
     return dashboard
   end,
